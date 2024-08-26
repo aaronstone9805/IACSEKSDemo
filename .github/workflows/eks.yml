@@ -56,8 +56,6 @@ jobs:
           eksctl create cluster
           kubectl apply -f ./${{ inputs.terraform_directory }}/code.yaml
         working-directory: ./${{ inputs.terraform_directory }}
-        with:
-          terraform_directory: 'test-02'
 
       - name: delete EKS cluster
         if: ${{ github.event.inputs.terraform_directory == 'test-02' && github.event.inputs.action == 'delete' }}
