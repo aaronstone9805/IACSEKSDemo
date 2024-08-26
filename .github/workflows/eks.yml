@@ -53,7 +53,7 @@ jobs:
 
       - name: Create EKS Cluster and Deploy Manifest
         run: |
-          # eksctl create cluster
+          eksctl create cluster
           kubectl apply -f test-02/code.yaml
         working-directory: ./${{ inputs.terraform_directory }}
 
